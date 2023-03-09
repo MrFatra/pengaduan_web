@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 // cek login
 if (isset($_SESSION['role'])) {
     switch ($_SESSION['role']) {
@@ -8,13 +6,14 @@ if (isset($_SESSION['role'])) {
             header('location: masyarakat/');
             break;
 
-        case 'petugas':
+        case 'petugas' || 'admin':
             header('location: petugas/');
             break;
 
         default:
+            header('location: 404.php');
             break;
     }
 } else {
-    header('masyarakat/login.php');
+    header('location: masyarakat/login.php');
 }

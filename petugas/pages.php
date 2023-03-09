@@ -4,6 +4,10 @@ if (isset($_GET['page'])) {
     $page = $_GET['page'];
 
     switch ($page) {
+        case 'tambah_petugas':
+            include 'tambah_petugas.php';
+            break;
+
         case 'upcoming':
             include 'up_laporan.php';
             break;

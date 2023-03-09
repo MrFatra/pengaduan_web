@@ -35,7 +35,7 @@ if ($query) {
                 </div>
                 <div class="form-group">
                     <label class="form-label" for="isi_laporan">Isi Laporan</label>
-                    <textarea class="form-control" id="isi_laporan" name="Isi_laporan" rows="6" placeholder="<?= $data['judul_laporan'] ?>"></textarea>
+                    <textarea class="form-control" id="isi_laporan" name="isi_laporan" rows="6" placeholder="<?= $data['isi_laporan'] ?>"><?= $data['isi_laporan'] ?></textarea>
                 </div>
                 <div class="form-group">
                     <label class="form-label" for="foto">Bukti Foto Kejadian</label>

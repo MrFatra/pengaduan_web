@@ -4,7 +4,7 @@
          <h6 class="m-0 font-weight-bold text-gray-900 text-center" style="font-size: 24px;">Data Petugas</h6>
      </div>
      <div class="card-body">
-         <a href="?page=buat_laporan" class="btn btn-icon-split btn-success mb-3">
+         <a href="?page=tambah_petugas" class="btn btn-icon-split btn-success mb-3">
              <span class="icon">
                  <i class="fas fa-plus"></i>
              </span>
