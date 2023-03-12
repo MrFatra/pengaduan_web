@@ -1,6 +1,7 @@
 <?php
 // Jangan lupa require!
 require 'config.php';
+require 'addons.php';
 
 // ISI PROSES REGISTER! 
 if (isset($_POST['submit'])) {
@@ -19,6 +20,8 @@ if (isset($_POST['submit'])) {
     if ($query) { // jika query berhasil
         header('location: ../masyarakat/login.php');
     } else { // jika query tidak berhasil
-        header('location: ../masyarakat/register.php');
+        get_message('Silahkan cek kembali data yang anda inputkan lalu coba lagi.', '../masyarakat/register.php');
     }
+} else {
+    header('location: ../index.php');
 }

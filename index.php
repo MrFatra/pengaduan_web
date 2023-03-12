@@ -1,13 +1,17 @@
 <?php
 // cek login
-if (isset($_SESSION['role'])) {
+if (session_start()) {
     switch ($_SESSION['role']) {
-        case 'masyarakat':
-            header('location: masyarakat/');
+        case 'petugas':
+            header('location: petugas/');
             break;
 
-        case 'petugas' || 'admin':
+        case 'admin':
             header('location: petugas/');
+            break;
+
+        case 'masyarakat':
+            header('location: masyarakat/');
             break;
 
         default:

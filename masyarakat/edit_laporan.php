@@ -39,6 +39,7 @@ if ($query) {
                 </div>
                 <div class="form-group">
                     <label class="form-label" for="foto">Bukti Foto Kejadian</label>
+                    <input class="form-control" type="hidden" id="foto_temp" name="foto_temp" value="<?= $data['foto'] ?>">
                     <input class="form-control" type="file" id="foto" name="foto">
                 </div>
                 <button class="btn btn-icon-split btn-success" type="submit" name="submit">

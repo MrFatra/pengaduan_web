@@ -1,6 +1,7 @@
 <?php
 
 require 'config.php';
+require 'addons.php';
 
 if (isset($_POST['submit'])) {
     $nama_petugas = $_POST['nama_petugas'];
@@ -13,18 +14,10 @@ if (isset($_POST['submit'])) {
     $query = mysqli_query($connect, $sql);
 
     if ($query) {
-?>
-        <script>
-            alert('Data berhasil ditambahkan!')
-            window.location = '../petugas/index.php?page=list_petugas'
-        </script>
-    <?php
+        get_message('Data berhasil ditambahkan.', '../petugas/index.php?page=list_petugas');
     } else {
-    ?>
-        <script>
-            alert('Data gagal ditambahkan!')
-            window.location = '../petugas/index.php?page=list_petugas'
-        </script>
-<?php
+        get_message('Data gagal ditambahkan.', '../petugas/index.php?page=list_petugas');
     }
+} else {
+    header('location: ../index.php');
 }

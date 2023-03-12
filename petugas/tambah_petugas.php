@@ -13,23 +13,23 @@
          <form action="../server/tambah_petugas.php" method="post">
              <div class="form-group">
                  <label class="form-label" for="nama_petugas">Nama Petugas</label>
-                 <input class="form-control" type="text" id="nama_petugas" name="nama_petugas">
+                 <input class="form-control" type="text" id="nama_petugas" name="nama_petugas" required>
              </div>
              <div class="form-group">
                  <label class="form-label" for="telp">Nomor Telepon</label>
-                 <input class="form-control" type="number" id="telp" name="telp">
+                 <input class="form-control" type="number" id="telp" name="telp" required>
              </div>
              <div class="form-group">
                  <label class="form-label" for="username">Username</label>
-                 <input class="form-control" type="text" id="username" name="username">
+                 <input class="form-control" type="text" id="username" name="username" required>
              </div>
              <div class="form-group">
                  <label class="form-label" for="password">Password</label>
-                 <input type="password" class="form-control" id="password" name="password">
+                 <input type="password" class="form-control" id="password" name="password" required>
              </div>
              <div class="form-group">
                  <label class="form-label" for="level">Level</label>
-                 <select name="level" id="level" class="form-control">
+                 <select name="level" id="level" class="form-control" required>
                      <option value="admin">Admin</option>
                      <option value="petugas">Petugas</option>
                  </select>

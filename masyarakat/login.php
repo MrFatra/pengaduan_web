@@ -1,7 +1,7 @@
 <?php
 session_start();
 // mencegah user login kembali
-if (isset($_SESSION['logged']) && $_SESSION['logged'] == 'y') {
+if (isset($_SESSION['logged']) && $_SESSION['logged'] == 'y' && $_SESSION['role'] == 'masyarakat') {
     header('location: ./');
 } else
 ?>
@@ -27,41 +27,40 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == 'y') {
 
 </head>
 
-<body class="bg-gradient-primary">
+<body class="bg-gradient">
 
     <div class="container">
 
         <!-- Outer Row -->
         <div class="row justify-content-center">
 
-            <div class="col-xl-10 col-lg-12 col-md-9">
+            <div class="col-md-8">
 
-                <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card o-hidden border-0 shadow-lg my-5" style="background-color: #3a4f7a;">
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
-                                <div class="p-5">
+                                <div class="pt-5 pb-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Selamat Datang!</h1>
+                                        <h1 class="h4 text-white mb-4" style="font-weight: 600;">Selamat Datang!</h1>
                                     </div>
                                     <form class="user" action="../server/login_masyarakat.php" method="post">
                                         <div class="form-group">
-                                            <input type="text" class="form-control form-control-user" name="username" placeholder="Username">
+                                            <input type="text" class="form-control form-control-user" name="username" placeholder="Username" required>
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user" name="password" placeholder="Password">
+                                            <input type="password" class="form-control form-control-user" name="password" placeholder="Password" required>
                                         </div>
-                                        <button type="submit" name="submit" class="btn btn-primary btn-user btn-block">
+                                        <button type="submit" name="submit" class="btn btn-user btn-block mt-4" style="background-color: #93c6e7; color: white; font-weight: bold;">
                                             Login
                                         </button>
                                     </form>
-                                    <hr>
-                                    <div class="text-center text-gray-600 small font-weight-bold">
+                                    <div class="text-center text-white small font-weight-bold mt-5">
                                         Belum memiliki akun?
                                     </div>
                                     <div class="text-center">
-                                        <a class="small" href="register.php">Register Sekarang!</a>
+                                        <a class="small" href="register.php" style="color: #93c6e7;">Register Sekarang!</a>
                                     </div>
                                 </div>
                             </div>

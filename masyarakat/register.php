@@ -20,53 +20,67 @@
 
 </head>
 
-<body class="bg-gradient-primary">
+<body class="bg-gradient">
+
+    <?php
+    session_start();
+
+    if (isset($_SESSION['message'])) {
+    ?>
+        <script>
+            alert(<?= $_SESSION['message'] ?>)
+        </script>
+    <?php
+    } else {
+        null;
+    }
+    ?>
+
 
     <div class="container">
 
         <!-- Outer Row -->
         <div class="row justify-content-center">
 
-            <div class="col-xl-10 col-lg-12 col-md-9">
+            <div class=" col-md-8">
 
-                <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card o-hidden border-0 shadow-lg my-5" style="background-color: #3a4f7a;">
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
-                                <div class="p-5">
+                                <div class="pt-5 pb-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Halo, Pendatang Baru!</h1>
+                                        <h1 class="h4 text-white mb-4" style="font-weight: 600;">Halo, Pendatang Baru!</h1>
                                     </div>
                                     <form class="user" action="../server/register_masyarakat.php" method="post">
                                         <div class="form-group">
-                                            <input type="number" class="form-control form-control-user" name="nik" placeholder="NIK">
+                                            <input type="number" class="form-control form-control-user" name="nik" placeholder="NIK" required>
                                         </div>
 
                                         <div class="form-group">
-                                            <input type="text" class="form-control form-control-user" name="nama" placeholder="Nama">
+                                            <input type="text" class="form-control form-control-user" name="nama" placeholder="Nama" required>
                                         </div>
 
                                         <div class="form-group">
-                                            <input type="number" class="form-control form-control-user" name="telp" placeholder="Nomor Telepon">
+                                            <input type="number" class="form-control form-control-user" name="telp" placeholder="Nomor Telepon" required>
                                         </div>
 
                                         <div class="form-group">
-                                            <input type="text" class="form-control form-control-user" name="username" placeholder="Username">
+                                            <input type="text" class="form-control form-control-user" name="username" placeholder="Username" required>
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user" name="password" placeholder="Password">
+                                            <input type="password" class="form-control form-control-user" name="password" placeholder="Password" required>
                                         </div>
-                                        <button type="submit" name="submit" class="btn btn-primary btn-user btn-block">
+                                        <button type="submit" name="submit" class="btn btn-primary btn-user btn-block mt-4" style="background-color: #93c6e7; color: white; font-weight: bold;">
                                             Daftar
                                         </button>
                                     </form>
-                                    <hr>
-                                    <div class="text-center text-gray-600 small font-weight-bold">
+                                    <div class="text-center text-white small font-weight-bold mt-5">
                                         Sudah memiliki akun?
                                     </div>
                                     <div class="text-center">
-                                        <a class="small" href="login.php">Login</a>
+                                        <a class="small" href="login.php" style="color: #93c6e7;">Login</a>
                                     </div>
                                 </div>
                             </div>

@@ -1,6 +1,7 @@
 <?php
 
 require 'config.php';
+require 'addons.php';
 
 if (isset($_POST['submit'])) {
     $tanggapan = $_POST['tanggapan'];
@@ -13,18 +14,10 @@ if (isset($_POST['submit'])) {
     $query = mysqli_query($connect, $status_update_sql);
 
     if ($query) {
-?>
-        <script>
-            alert('Data berhasil ditanggapi!')
-            window.location = '../petugas/'
-        </script>
-    <?php
+        get_message('Laporan berhasil ditanggapi.', '../petugas/index.php?page=upcoming');
     } else {
-    ?>
-        <script>
-            alert('Data gagal ditanggapi!')
-            window.location = '../petugas/'
-        </script>
-<?php
+        get_message('Laporan gagal ditanggapi.', '../petugas/index.php?page=upcoming');
     }
+} else {
+    header('location: ../index.php');
 }

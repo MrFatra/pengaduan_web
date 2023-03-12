@@ -10,9 +10,9 @@ if (isset($_POST['delete']) && isset($_POST['id_pengaduan'])) {
     $query = mysqli_query($connect, $sql);
 
     if ($query) {
-        get_message('Data berhasil dihapus.', '../index.php');
+        get_message('Data berhasil dihapus.', '../petugas/index.php');
     } else {
-        get_message('Data gagal dihapus.', '../index.php');
+        get_message('Data gagal dihapus.', '../petugas/index.php');
     }
 } else {
     header('location: ../index.php');

@@ -13,23 +13,23 @@
          <form action="../server/buat_laporan.php" method="post" enctype="multipart/form-data">
              <div class="form-group">
                  <label class="form-label" for="nik">NIK</label>
-                 <input class="form-control" type="number" id="nik" name="nik" value="<?= $_SESSION['nik'] ?>" readonly>
+                 <input class="form-control" type="number" id="nik" name="nik" value="<?= $_SESSION['nik'] ?>" readonly required>
              </div>
              <div class="form-group">
                  <label class="form-label" for="judul_laporan">Judul Laporan</label>
-                 <input class="form-control" type="text" id="judul_laporan" name="judul_laporan">
+                 <input class="form-control" type="text" id="judul_laporan" name="judul_laporan" required>
              </div>
              <div class="form-group">
                  <label class="form-label" for="tgl_laporan">Tanggal Laporan</label>
-                 <input class="form-control" type="date" id="tgl_laporan" name="tgl_laporan">
+                 <input class="form-control" type="date" id="tgl_laporan" name="tgl_laporan" required>
              </div>
              <div class="form-group">
                  <label class="form-label" for="isi_laporan">Isi Laporan</label>
-                 <textarea class="form-control" id="isi_laporan" name="isi_laporan" rows="6"></textarea>
+                 <textarea class="form-control" id="isi_laporan" name="isi_laporan" rows="6" required></textarea>
              </div>
              <div class="form-group">
                  <label class="form-label" for="foto">Bukti Foto Kejadian</label>
-                 <input class="form-control" type="file" id="foto" name="foto">
+                 <input class="form-control" type="file" id="foto" name="foto" required>
              </div>
              <button class="btn btn-icon-split btn-success" type="submit" name="submit">
                  <span class="icon">

@@ -2,6 +2,7 @@
 
 session_start();
 require 'config.php';
+require 'addons.php';
 
 if (isset($_POST['id_pengaduan']) && isset($_POST['id_petugas'])) {
     $id_petugas = $_POST['id_petugas'];
@@ -13,18 +14,10 @@ if (isset($_POST['id_pengaduan']) && isset($_POST['id_petugas'])) {
     $query_insert = mysqli_query($connect, $sql_insert);
 
     if ($query_insert && $query_update) {
-?>
-        <script>
-            alert('Laporan berhasil dikonfirmasi!')
-            window.location = '../petugas/?page=upcoming'
-        </script>
-    <?php
+        get_message('Data berhasil dikonfirmasi.', '../petugas/?page=upcoming');
     } else {
-    ?>
-        <script>
-            alert('Laporan gagal dikonfirmasi!')
-            window.location = '../petugas/?page=upcoming'
-        </script>
-<?php
+        get_message('Data gagal dikonfirmasi.', '../petugas/?page=upcoming');
     }
+} else {
+    header('location: ../index.php');
 }

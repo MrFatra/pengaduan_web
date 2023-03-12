@@ -1,6 +1,7 @@
 <?php
 
 require 'config.php';
+require 'addons.php';
 
 if (isset($_POST['delete']) && isset($_POST['id_petugas'])) {
     $id = $_POST['id_petugas'];
@@ -9,18 +10,10 @@ if (isset($_POST['delete']) && isset($_POST['id_petugas'])) {
     $query = mysqli_query($connect, $sql);
 
     if ($query) {
-?>
-        <script>
-            alert('Data berhasil dihapus!')
-            window.location = '../index.php'
-        </script>
-    <?php
+        get_message('Data berhasil dihapus.', '../index.php');
     } else {
-    ?>
-        <script>
-            alert('Data gagal dihapus!')
-            window.location = '../index.php'
-        </script>
-<?php
+        get_message('Data gagal dihapus.', '../index.php');
     }
+} else {
+    header('location: ../index.php');
 }

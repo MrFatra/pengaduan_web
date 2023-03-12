@@ -69,12 +69,15 @@
                                              </span>
                                              <span class="text">Verifikasi</span>
                                          </a>
-                                         <a href="../server/hapus_laporan.php" class="btn btn-icon-split btn-danger m-2" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">
-                                             <span class="icon">
-                                                 <i class="fas fa-trash"></i>
-                                             </span>
-                                             <span class="text">Hapus</span>
-                                         </a>
+                                         <form action="../server/hapus_laporan.php" method="post">
+                                             <input type="hidden" name="id_pengaduan" value="<?= $data['id_pengaduan'] ?>">
+                                             <button name="delete" class="btn btn-icon-split btn-danger m-2" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">
+                                                 <span class="icon">
+                                                     <i class="fas fa-trash"></i>
+                                                 </span>
+                                                 <span class="text">Hapus</span>
+                                             </button>
+                                         </form>
                                      <?php } ?>
                                  </td>
                              </tr>

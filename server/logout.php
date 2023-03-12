@@ -5,17 +5,20 @@ session_start();
 switch ($_SESSION['role']) {
     case 'masyarakat':
         session_destroy();
-        header('location: ../masyarakat/login.php');
+        $_SESSION = [];
+        header('location: ../masyarakat/');
         break;
 
     case 'petugas':
         session_destroy();
-        header('location: ../petugas/login.php');
+        $_SESSION = [];
+        header('location: ../petugas/');
         break;
 
     case 'admin':
         session_destroy();
-        header('location: ../petugas/login.php');
+        $_SESSION = [];
+        header('location: ../petugas/');
         break;
 
     default:

@@ -1,6 +1,7 @@
 <?php
 
 require 'config.php';
+require 'addons.php';
 
 if (isset($_POST['submit']) && isset($_GET['id'])) {
     $id = $_GET['id'];
@@ -13,18 +14,10 @@ if (isset($_POST['submit']) && isset($_GET['id'])) {
     $query = mysqli_query($connect, $sql);
 
     if ($query) {
-?>
-        <script>
-            alert('Data berhasil ditambahkan!')
-            window.location = '../petugas/'
-        </script>
-    <?php
+        get_message('Data berhasil diedit.', '../petugas/');
     } else {
-    ?>
-        <script>
-            alert('Data gagal ditambahkan!')
-            window.location = '../petugas/'
-        </script>
-<?php
+        get_message('Data gagal diedit.', '../petugas/');
     }
+} else {
+    header('location: ../index.php');
 }
